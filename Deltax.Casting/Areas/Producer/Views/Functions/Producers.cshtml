@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Producers";
+}
+
+<div class="container-fluid">
+    <ol>
+        @foreach (var x in Model)
+        {
+            <li>
+                @x.User.Name
+            </li>
+        }
+    </ol>
+</div>
+

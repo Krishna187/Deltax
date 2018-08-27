@@ -1,0 +1,1018 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5B8A83FB-5F48-4975-807D-D6A3F637D0CC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Deltax.Casting</RootNamespace>
+    <AssemblyName>Deltax.Casting</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.2.0\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.2.0\lib\net45\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.0.3.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.2.0\lib\net45\Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.2.0.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.2.0\lib\net45\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.2.0\lib\net45\Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.2.0\lib\net45\Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mvc5, Version=1.3.0.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Mvc5.1.3.0\lib\net45\Unity.Mvc5.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.2.0\lib\net45\Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.0.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.2.0\lib\net45\Unity.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.5.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.5.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.5.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.5.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.5.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.5.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="Areas\Actor\ActorAreaRegistration.cs" />
+    <Compile Include="Areas\Actor\Controllers\FunctionsController.cs" />
+    <Compile Include="Areas\Movie\Controllers\FunctionsController.cs" />
+    <Compile Include="Areas\Movie\MovieAreaRegistration.cs" />
+    <Compile Include="Areas\Producer\Controllers\FunctionsController.cs" />
+    <Compile Include="Areas\Producer\ProducerAreaRegistration.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\assets\extra-libs\sparkline\sparkline.js" />
+    <Content Include="Content\assets\images\custom-select.png" />
+    <Content Include="Content\assets\images\Delta-horizontal-revision-icon.png" />
+    <Content Include="Content\assets\images\Delta-horizontal-revision.png" />
+    <Content Include="Content\assets\images\Deltax.JPG" />
+    <Content Include="Content\assets\images\favicon.png" />
+    <Content Include="Content\assets\images\free-demo.jpg" />
+    <Content Include="Content\assets\images\logo-icon.png" />
+    <Content Include="Content\assets\images\logo-light-icon.png" />
+    <Content Include="Content\assets\images\logo-light-text.png" />
+    <Content Include="Content\assets\images\logo-text.png" />
+    <Content Include="Content\assets\images\pro-demo.jpg" />
+    <Content Include="Content\assets\images\users\1-old.jpg" />
+    <Content Include="Content\assets\images\users\1.jpg" />
+    <Content Include="Content\assets\images\users\1.png" />
+    <Content Include="Content\assets\images\users\2.jpg" />
+    <Content Include="Content\assets\images\users\2.png" />
+    <Content Include="Content\assets\images\users\3.jpg" />
+    <Content Include="Content\assets\images\users\3.png" />
+    <Content Include="Content\assets\images\users\4.jpg" />
+    <Content Include="Content\assets\images\users\5.jpg" />
+    <Content Include="Content\assets\images\users\6.jpg" />
+    <Content Include="Content\assets\images\users\7.jpg" />
+    <Content Include="Content\assets\images\users\8.jpg" />
+    <Content Include="Content\assets\images\users\agent.jpg" />
+    <Content Include="Content\assets\images\users\agent2.jpg" />
+    <Content Include="Content\assets\images\users\d1.jpg" />
+    <Content Include="Content\assets\images\users\d2.jpg" />
+    <Content Include="Content\assets\images\users\d3.jpg" />
+    <Content Include="Content\assets\images\users\d4.jpg" />
+    <Content Include="Content\assets\images\users\d5.jpg" />
+    <Content Include="Content\assets\images\users\profile.png" />
+    <Content Include="Content\assets\libs\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="Content\assets\libs\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\assets\libs\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Content\assets\libs\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\assets\libs\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Content\assets\libs\chartist-plugin-tooltips\dist\chartist-plugin-tooltip.css" />
+    <Content Include="Content\assets\libs\chartist-plugin-tooltips\dist\chartist-plugin-tooltip.min.js" />
+    <Content Include="Content\assets\libs\chartist\dist\chartist.min.css" />
+    <Content Include="Content\assets\libs\chartist\dist\chartist.min.js" />
+    <Content Include="Content\assets\libs\jquery\dist\core.js" />
+    <Content Include="Content\assets\libs\jquery\dist\jquery.min.js" />
+    <Content Include="Content\assets\libs\jquery\dist\jquery.slim.min.js" />
+    <Content Include="Content\assets\libs\moment\ender.js" />
+    <Content Include="Content\assets\libs\moment\locale\af.js" />
+    <Content Include="Content\assets\libs\moment\locale\ar-dz.js" />
+    <Content Include="Content\assets\libs\moment\locale\ar-kw.js" />
+    <Content Include="Content\assets\libs\moment\locale\ar-ly.js" />
+    <Content Include="Content\assets\libs\moment\locale\ar-ma.js" />
+    <Content Include="Content\assets\libs\moment\locale\ar-sa.js" />
+    <Content Include="Content\assets\libs\moment\locale\ar-tn.js" />
+    <Content Include="Content\assets\libs\moment\locale\ar.js" />
+    <Content Include="Content\assets\libs\moment\locale\az.js" />
+    <Content Include="Content\assets\libs\moment\locale\be.js" />
+    <Content Include="Content\assets\libs\moment\locale\bg.js" />
+    <Content Include="Content\assets\libs\moment\locale\bm.js" />
+    <Content Include="Content\assets\libs\moment\locale\bn.js" />
+    <Content Include="Content\assets\libs\moment\locale\bo.js" />
+    <Content Include="Content\assets\libs\moment\locale\br.js" />
+    <Content Include="Content\assets\libs\moment\locale\bs.js" />
+    <Content Include="Content\assets\libs\moment\locale\ca.js" />
+    <Content Include="Content\assets\libs\moment\locale\cs.js" />
+    <Content Include="Content\assets\libs\moment\locale\cv.js" />
+    <Content Include="Content\assets\libs\moment\locale\cy.js" />
+    <Content Include="Content\assets\libs\moment\locale\da.js" />
+    <Content Include="Content\assets\libs\moment\locale\de-at.js" />
+    <Content Include="Content\assets\libs\moment\locale\de-ch.js" />
+    <Content Include="Content\assets\libs\moment\locale\de.js" />
+    <Content Include="Content\assets\libs\moment\locale\dv.js" />
+    <Content Include="Content\assets\libs\moment\locale\el.js" />
+    <Content Include="Content\assets\libs\moment\locale\en-au.js" />
+    <Content Include="Content\assets\libs\moment\locale\en-ca.js" />
+    <Content Include="Content\assets\libs\moment\locale\en-gb.js" />
+    <Content Include="Content\assets\libs\moment\locale\en-ie.js" />
+    <Content Include="Content\assets\libs\moment\locale\en-il.js" />
+    <Content Include="Content\assets\libs\moment\locale\en-nz.js" />
+    <Content Include="Content\assets\libs\moment\locale\eo.js" />
+    <Content Include="Content\assets\libs\moment\locale\es-do.js" />
+    <Content Include="Content\assets\libs\moment\locale\es-us.js" />
+    <Content Include="Content\assets\libs\moment\locale\es.js" />
+    <Content Include="Content\assets\libs\moment\locale\et.js" />
+    <Content Include="Content\assets\libs\moment\locale\eu.js" />
+    <Content Include="Content\assets\libs\moment\locale\fa.js" />
+    <Content Include="Content\assets\libs\moment\locale\fi.js" />
+    <Content Include="Content\assets\libs\moment\locale\fo.js" />
+    <Content Include="Content\assets\libs\moment\locale\fr-ca.js" />
+    <Content Include="Content\assets\libs\moment\locale\fr-ch.js" />
+    <Content Include="Content\assets\libs\moment\locale\fr.js" />
+    <Content Include="Content\assets\libs\moment\locale\fy.js" />
+    <Content Include="Content\assets\libs\moment\locale\gd.js" />
+    <Content Include="Content\assets\libs\moment\locale\gl.js" />
+    <Content Include="Content\assets\libs\moment\locale\gom-latn.js" />
+    <Content Include="Content\assets\libs\moment\locale\gu.js" />
+    <Content Include="Content\assets\libs\moment\locale\he.js" />
+    <Content Include="Content\assets\libs\moment\locale\hi.js" />
+    <Content Include="Content\assets\libs\moment\locale\hr.js" />
+    <Content Include="Content\assets\libs\moment\locale\hu.js" />
+    <Content Include="Content\assets\libs\moment\locale\hy-am.js" />
+    <Content Include="Content\assets\libs\moment\locale\id.js" />
+    <Content Include="Content\assets\libs\moment\locale\is.js" />
+    <Content Include="Content\assets\libs\moment\locale\it.js" />
+    <Content Include="Content\assets\libs\moment\locale\ja.js" />
+    <Content Include="Content\assets\libs\moment\locale\jv.js" />
+    <Content Include="Content\assets\libs\moment\locale\ka.js" />
+    <Content Include="Content\assets\libs\moment\locale\kk.js" />
+    <Content Include="Content\assets\libs\moment\locale\km.js" />
+    <Content Include="Content\assets\libs\moment\locale\kn.js" />
+    <Content Include="Content\assets\libs\moment\locale\ko.js" />
+    <Content Include="Content\assets\libs\moment\locale\ky.js" />
+    <Content Include="Content\assets\libs\moment\locale\lb.js" />
+    <Content Include="Content\assets\libs\moment\locale\lo.js" />
+    <Content Include="Content\assets\libs\moment\locale\lt.js" />
+    <Content Include="Content\assets\libs\moment\locale\lv.js" />
+    <Content Include="Content\assets\libs\moment\locale\me.js" />
+    <Content Include="Content\assets\libs\moment\locale\mi.js" />
+    <Content Include="Content\assets\libs\moment\locale\mk.js" />
+    <Content Include="Content\assets\libs\moment\locale\ml.js" />
+    <Content Include="Content\assets\libs\moment\locale\mn.js" />
+    <Content Include="Content\assets\libs\moment\locale\mr.js" />
+    <Content Include="Content\assets\libs\moment\locale\ms-my.js" />
+    <Content Include="Content\assets\libs\moment\locale\ms.js" />
+    <Content Include="Content\assets\libs\moment\locale\mt.js" />
+    <Content Include="Content\assets\libs\moment\locale\my.js" />
+    <Content Include="Content\assets\libs\moment\locale\nb.js" />
+    <Content Include="Content\assets\libs\moment\locale\ne.js" />
+    <Content Include="Content\assets\libs\moment\locale\nl-be.js" />
+    <Content Include="Content\assets\libs\moment\locale\nl.js" />
+    <Content Include="Content\assets\libs\moment\locale\nn.js" />
+    <Content Include="Content\assets\libs\moment\locale\pa-in.js" />
+    <Content Include="Content\assets\libs\moment\locale\pl.js" />
+    <Content Include="Content\assets\libs\moment\locale\pt-br.js" />
+    <Content Include="Content\assets\libs\moment\locale\pt.js" />
+    <Content Include="Content\assets\libs\moment\locale\ro.js" />
+    <Content Include="Content\assets\libs\moment\locale\ru.js" />
+    <Content Include="Content\assets\libs\moment\locale\sd.js" />
+    <Content Include="Content\assets\libs\moment\locale\se.js" />
+    <Content Include="Content\assets\libs\moment\locale\si.js" />
+    <Content Include="Content\assets\libs\moment\locale\sk.js" />
+    <Content Include="Content\assets\libs\moment\locale\sl.js" />
+    <Content Include="Content\assets\libs\moment\locale\sq.js" />
+    <Content Include="Content\assets\libs\moment\locale\sr-cyrl.js" />
+    <Content Include="Content\assets\libs\moment\locale\sr.js" />
+    <Content Include="Content\assets\libs\moment\locale\ss.js" />
+    <Content Include="Content\assets\libs\moment\locale\sv.js" />
+    <Content Include="Content\assets\libs\moment\locale\sw.js" />
+    <Content Include="Content\assets\libs\moment\locale\ta.js" />
+    <Content Include="Content\assets\libs\moment\locale\te.js" />
+    <Content Include="Content\assets\libs\moment\locale\tet.js" />
+    <Content Include="Content\assets\libs\moment\locale\tg.js" />
+    <Content Include="Content\assets\libs\moment\locale\th.js" />
+    <Content Include="Content\assets\libs\moment\locale\tl-ph.js" />
+    <Content Include="Content\assets\libs\moment\locale\tlh.js" />
+    <Content Include="Content\assets\libs\moment\locale\tr.js" />
+    <Content Include="Content\assets\libs\moment\locale\tzl.js" />
+    <Content Include="Content\assets\libs\moment\locale\tzm-latn.js" />
+    <Content Include="Content\assets\libs\moment\locale\tzm.js" />
+    <Content Include="Content\assets\libs\moment\locale\ug-cn.js" />
+    <Content Include="Content\assets\libs\moment\locale\uk.js" />
+    <Content Include="Content\assets\libs\moment\locale\ur.js" />
+    <Content Include="Content\assets\libs\moment\locale\uz-latn.js" />
+    <Content Include="Content\assets\libs\moment\locale\uz.js" />
+    <Content Include="Content\assets\libs\moment\locale\vi.js" />
+    <Content Include="Content\assets\libs\moment\locale\x-pseudo.js" />
+    <Content Include="Content\assets\libs\moment\locale\yo.js" />
+    <Content Include="Content\assets\libs\moment\locale\zh-cn.js" />
+    <Content Include="Content\assets\libs\moment\locale\zh-hk.js" />
+    <Content Include="Content\assets\libs\moment\locale\zh-tw.js" />
+    <Content Include="Content\assets\libs\moment\min\locales.min.js" />
+    <Content Include="Content\assets\libs\moment\min\moment-with-locales.min.js" />
+    <Content Include="Content\assets\libs\moment\min\moment.min.js" />
+    <Content Include="Content\assets\libs\moment\moment.js" />
+    <Content Include="Content\assets\libs\moment\package.js" />
+    <Content Include="Content\assets\libs\popper.js\dist\esm\popper-utils.min.js" />
+    <Content Include="Content\assets\libs\popper.js\dist\esm\popper.min.js" />
+    <Content Include="Content\assets\libs\popper.js\dist\popper-utils.min.js" />
+    <Content Include="Content\assets\libs\popper.js\dist\popper.min.js" />
+    <Content Include="Content\assets\libs\popper.js\dist\umd\popper-utils.min.js" />
+    <Content Include="Content\assets\libs\popper.js\dist\umd\popper.min.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\dist\css\icons\material-design-iconic-font\css\material-design-iconic-font.css" />
+    <Content Include="Content\dist\css\icons\material-design-iconic-font\css\material-design-iconic-font.min.css" />
+    <Content Include="Content\dist\css\icons\material-design-iconic-font\css\materialdesignicons.min.css" />
+    <Content Include="Content\dist\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Content\dist\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.svg" />
+    <Content Include="Content\dist\css\icons\themify-icons\fonts\themify.svg" />
+    <Content Include="Content\dist\css\icons\themify-icons\ie7\ie7.css" />
+    <Content Include="Content\dist\css\icons\themify-icons\ie7\ie7.js" />
+    <Content Include="Content\dist\css\icons\themify-icons\themify-icons.css" />
+    <Content Include="Content\dist\css\icons\weather-icons\css\weather-icons-core.css" />
+    <Content Include="Content\dist\css\icons\weather-icons\css\weather-icons-variables.css" />
+    <Content Include="Content\dist\css\icons\weather-icons\css\weather-icons-wind.css" />
+    <Content Include="Content\dist\css\icons\weather-icons\css\weather-icons-wind.min.css" />
+    <Content Include="Content\dist\css\icons\weather-icons\css\weather-icons.css" />
+    <Content Include="Content\dist\css\icons\weather-icons\css\weather-icons.min.css" />
+    <Content Include="Content\dist\css\icons\weather-icons\fonts\weathericons-regular-webfont.svg" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\css\variables-beaufort.css" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\css\variables-day.css" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\css\variables-direction.css" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\css\variables-misc.css" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\css\variables-moon.css" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\css\variables-neutral.css" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\css\variables-night.css" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\css\variables-time.css" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\css\variables-wind-names.css" />
+    <Content Include="Content\dist\css\style.css" />
+    <Content Include="Content\dist\css\style.min.css" />
+    <Content Include="Content\dist\js\custom.js" />
+    <Content Include="Content\dist\js\custom.min.js" />
+    <Content Include="Content\dist\js\pages\dashboards\dashboard1.js" />
+    <Content Include="Content\dist\js\sidebarmenu.js" />
+    <Content Include="Content\dist\js\waves.js" />
+    <Content Include="Content\jquery-ui.min.css" />
+    <Content Include="Design\niceadmin-lite\assets\extra-libs\sparkline\sparkline.js" />
+    <Content Include="Design\niceadmin-lite\assets\images\custom-select.png" />
+    <Content Include="Design\niceadmin-lite\assets\images\favicon.png" />
+    <Content Include="Design\niceadmin-lite\assets\images\free-demo.jpg" />
+    <Content Include="Design\niceadmin-lite\assets\images\logo-icon.png" />
+    <Content Include="Design\niceadmin-lite\assets\images\logo-light-icon.png" />
+    <Content Include="Design\niceadmin-lite\assets\images\logo-light-text.png" />
+    <Content Include="Design\niceadmin-lite\assets\images\logo-text.png" />
+    <Content Include="Design\niceadmin-lite\assets\images\pro-demo.jpg" />
+    <Content Include="Design\niceadmin-lite\assets\images\users\1-old.jpg" />
+    <Content Include="Design\niceadmin-lite\assets\images\users\1.jpg" />
+    <Content Include="Design\niceadmin-lite\assets\images\users\1.png" />
+    <Content Include="Design\niceadmin-lite\assets\images\users\2.jpg" />
+    <Content Include="Design\niceadmin-lite\assets\images\users\2.png" />
+    <Content Include="Design\niceadmin-lite\assets\images\users\3.jpg" />
+    <Content Include="Design\niceadmin-lite\assets\images\users\3.png" />
+    <Content Include="Design\niceadmin-lite\assets\images\users\4.jpg" />
+    <Content Include="Design\niceadmin-lite\assets\images\users\5.jpg" />
+    <Content Include="Design\niceadmin-lite\assets\images\users\6.jpg" />
+    <Content Include="Design\niceadmin-lite\assets\images\users\7.jpg" />
+    <Content Include="Design\niceadmin-lite\assets\images\users\8.jpg" />
+    <Content Include="Design\niceadmin-lite\assets\images\users\agent.jpg" />
+    <Content Include="Design\niceadmin-lite\assets\images\users\agent2.jpg" />
+    <Content Include="Design\niceadmin-lite\assets\images\users\d1.jpg" />
+    <Content Include="Design\niceadmin-lite\assets\images\users\d2.jpg" />
+    <Content Include="Design\niceadmin-lite\assets\images\users\d3.jpg" />
+    <Content Include="Design\niceadmin-lite\assets\images\users\d4.jpg" />
+    <Content Include="Design\niceadmin-lite\assets\images\users\d5.jpg" />
+    <Content Include="Design\niceadmin-lite\assets\images\users\profile.png" />
+    <Content Include="Design\niceadmin-lite\assets\libs\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="Design\niceadmin-lite\assets\libs\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="Design\niceadmin-lite\assets\libs\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Design\niceadmin-lite\assets\libs\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\chartist-plugin-tooltips\dist\chartist-plugin-tooltip.css" />
+    <Content Include="Design\niceadmin-lite\assets\libs\chartist-plugin-tooltips\dist\chartist-plugin-tooltip.min.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\chartist\dist\chartist.min.css" />
+    <Content Include="Design\niceadmin-lite\assets\libs\chartist\dist\chartist.min.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\jquery\dist\core.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\jquery\dist\jquery.min.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\jquery\dist\jquery.slim.min.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\ender.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\af.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ar-dz.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ar-kw.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ar-ly.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ar-ma.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ar-sa.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ar-tn.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ar.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\az.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\be.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\bg.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\bm.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\bn.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\bo.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\br.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\bs.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ca.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\cs.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\cv.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\cy.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\da.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\de-at.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\de-ch.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\de.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\dv.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\el.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\en-au.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\en-ca.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\en-gb.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\en-ie.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\en-il.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\en-nz.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\eo.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\es-do.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\es-us.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\es.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\et.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\eu.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\fa.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\fi.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\fo.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\fr-ca.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\fr-ch.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\fr.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\fy.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\gd.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\gl.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\gom-latn.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\gu.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\he.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\hi.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\hr.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\hu.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\hy-am.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\id.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\is.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\it.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ja.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\jv.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ka.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\kk.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\km.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\kn.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ko.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ky.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\lb.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\lo.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\lt.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\lv.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\me.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\mi.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\mk.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ml.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\mn.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\mr.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ms-my.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ms.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\mt.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\my.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\nb.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ne.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\nl-be.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\nl.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\nn.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\pa-in.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\pl.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\pt-br.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\pt.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ro.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ru.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\sd.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\se.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\si.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\sk.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\sl.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\sq.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\sr-cyrl.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\sr.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ss.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\sv.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\sw.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ta.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\te.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\tet.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\tg.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\th.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\tl-ph.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\tlh.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\tr.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\tzl.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\tzm-latn.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\tzm.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ug-cn.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\uk.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\ur.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\uz-latn.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\uz.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\vi.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\x-pseudo.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\yo.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\zh-cn.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\zh-hk.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\locale\zh-tw.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\min\locales.min.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\min\moment-with-locales.min.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\min\moment.min.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\moment.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\moment\package.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\popper.js\dist\esm\popper-utils.min.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\popper.js\dist\esm\popper.min.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\popper.js\dist\popper-utils.min.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\popper.js\dist\popper.min.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\popper.js\dist\umd\popper-utils.min.js" />
+    <Content Include="Design\niceadmin-lite\assets\libs\popper.js\dist\umd\popper.min.js" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\material-design-iconic-font\css\material-design-iconic-font.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\material-design-iconic-font\css\material-design-iconic-font.min.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\material-design-iconic-font\css\materialdesignicons.min.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.svg" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\themify-icons\fonts\themify.svg" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\themify-icons\ie7\ie7.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\themify-icons\ie7\ie7.js" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\themify-icons\themify-icons.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\css\weather-icons-core.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\css\weather-icons-variables.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\css\weather-icons-wind.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\css\weather-icons-wind.min.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\css\weather-icons.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\css\weather-icons.min.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\fonts\weathericons-regular-webfont.svg" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\css\variables-beaufort.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\css\variables-day.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\css\variables-direction.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\css\variables-misc.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\css\variables-moon.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\css\variables-neutral.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\css\variables-night.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\css\variables-time.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\css\variables-wind-names.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\style.css" />
+    <Content Include="Design\niceadmin-lite\dist\css\style.min.css" />
+    <Content Include="Design\niceadmin-lite\dist\js\custom.js" />
+    <Content Include="Design\niceadmin-lite\dist\js\custom.min.js" />
+    <Content Include="Design\niceadmin-lite\dist\js\pages\dashboards\dashboard1.js" />
+    <Content Include="Design\niceadmin-lite\dist\js\sidebarmenu.js" />
+    <Content Include="Design\niceadmin-lite\dist\js\waves.js" />
+    <Content Include="Design\niceadmin-lite\html\ltr\error-404.html" />
+    <Content Include="Design\niceadmin-lite\html\ltr\form-basic.html" />
+    <Content Include="Design\niceadmin-lite\html\ltr\icon-material.html" />
+    <Content Include="Design\niceadmin-lite\html\ltr\index.html" />
+    <Content Include="Design\niceadmin-lite\html\ltr\pages-profile.html" />
+    <Content Include="Design\niceadmin-lite\html\ltr\starter-kit.html" />
+    <Content Include="Design\niceadmin-lite\html\ltr\table-basic.html" />
+    <Content Include="Design\niceadmin-lite\landingpage\index.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Actor\Views\web.config" />
+    <Content Include="Areas\Actor\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Actor\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Actor\Views\Functions\Actors.cshtml" />
+    <Content Include="Design\niceadmin-lite\.DS_Store" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\themify-icons\fonts\themify.eot" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\themify-icons\fonts\themify.ttf" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\themify-icons\fonts\themify.woff" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\themify-icons\themify-icons.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\fonts\weathericons-regular-webfont.eot" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\fonts\weathericons-regular-webfont.ttf" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\fonts\weathericons-regular-webfont.woff" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\fonts\weathericons-regular-webfont.woff2" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-classes\classes-beaufort.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-classes\classes-day.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-classes\classes-direction.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-classes\classes-misc.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-classes\classes-moon-aliases.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-classes\classes-moon.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-classes\classes-neutral.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-classes\classes-night.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-classes\classes-time.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-classes\classes-wind-aliases.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-classes\classes-wind-degrees.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-classes\classes-wind.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-variables\variables-beaufort.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-variables\variables-day.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-variables\variables-direction.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-variables\variables-misc.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-variables\variables-moon.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-variables\variables-neutral.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-variables\variables-night.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-variables\variables-time.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\icon-variables\variables-wind-names.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\mappings\wi-forecast-io.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\mappings\wi-owm.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\mappings\wi-wmo4680.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\mappings\wi-yahoo.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\weather-icons-classes.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\weather-icons-core.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\weather-icons-variables.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\weather-icons-wind.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\weather-icons-wind.min.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\weather-icons.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\less\weather-icons.min.less" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-classes\classes-beaufort.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-classes\classes-day.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-classes\classes-direction.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-classes\classes-misc.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-classes\classes-moon-aliases.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-classes\classes-moon.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-classes\classes-neutral.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-classes\classes-night.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-classes\classes-time.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-classes\classes-wind-aliases.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-classes\classes-wind-degrees.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-classes\classes-wind.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-variables\variables-beaufort.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-variables\variables-day.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-variables\variables-direction.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-variables\variables-misc.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-variables\variables-moon.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-variables\variables-neutral.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-variables\variables-night.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-variables\variables-time.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\icon-variables\variables-wind-names.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\mappings\wi-forecast-io.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\mappings\wi-owm.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\mappings\wi-wmo4680.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\mappings\wi-yahoo.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\weather-icons-classes.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\weather-icons-core.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\weather-icons-variables.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\weather-icons-wind.min.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\weather-icons-wind.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\weather-icons.min.scss" />
+    <Content Include="Design\niceadmin-lite\dist\css\icons\weather-icons\sass\weather-icons.scss" />
+    <Content Include="Design\niceadmin-lite\html\ltr\debug.log" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\bootstrap.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_badge.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_caret.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_float.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_hover.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_image.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_size.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\mixins\_visibility.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\utilities\_align.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\utilities\_background.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\utilities\_borders.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\utilities\_display.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\utilities\_embed.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\utilities\_flex.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\utilities\_float.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\utilities\_position.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\utilities\_shadows.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\utilities\_sizing.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\utilities\_spacing.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\utilities\_text.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\utilities\_visibility.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_alert.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_badge.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_button-group.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_buttons.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_card.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_carousel.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_close.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_code.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_custom-forms.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_dropdown.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_forms.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_functions.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_grid.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_images.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_input-group.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_jumbotron.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_list-group.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_media.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_mixins.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_modal.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_nav.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_navbar.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_pagination.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_popover.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_print.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_progress.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_reboot.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_root.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_tables.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_tooltip.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_transitions.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_type.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_utilities.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\bootstrap\_variables.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\components.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\core\animation\animation.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\core\breadcrumb\breadcrumb.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\core\buttons\buttons.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\core\core.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\core\extra\extra.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\core\layout\layout.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\core\loader\spinner.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\core\scafholdings\scafholding.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\core\sidebar\sidebar.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\core\tables\table-pages.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\core\topbar\header.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\core\topbar\notify.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\core\wave-effects\wave-effects.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\custom.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\mixins\padding-margin.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\pages.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\pages\dashboards\dashboard1.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\responsive.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\style.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\theme-colors\theme-colors.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\variable.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\widgets\comments.scss" />
+    <Content Include="Design\niceadmin-lite\src\scss\widgets\widgets.scss" />
+    <Content Include="Content\dist\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Content\dist\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Content\dist\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Content\dist\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Content\dist\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="Content\dist\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="Content\dist\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="Content\dist\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="Content\dist\css\icons\themify-icons\fonts\themify.eot" />
+    <Content Include="Content\dist\css\icons\themify-icons\fonts\themify.ttf" />
+    <Content Include="Content\dist\css\icons\themify-icons\fonts\themify.woff" />
+    <Content Include="Content\dist\css\icons\themify-icons\themify-icons.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\fonts\weathericons-regular-webfont.eot" />
+    <Content Include="Content\dist\css\icons\weather-icons\fonts\weathericons-regular-webfont.ttf" />
+    <Content Include="Content\dist\css\icons\weather-icons\fonts\weathericons-regular-webfont.woff" />
+    <Content Include="Content\dist\css\icons\weather-icons\fonts\weathericons-regular-webfont.woff2" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-classes\classes-beaufort.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-classes\classes-day.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-classes\classes-direction.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-classes\classes-misc.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-classes\classes-moon-aliases.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-classes\classes-moon.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-classes\classes-neutral.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-classes\classes-night.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-classes\classes-time.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-classes\classes-wind-aliases.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-classes\classes-wind-degrees.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-classes\classes-wind.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-variables\variables-beaufort.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-variables\variables-day.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-variables\variables-direction.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-variables\variables-misc.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-variables\variables-moon.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-variables\variables-neutral.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-variables\variables-night.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-variables\variables-time.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\icon-variables\variables-wind-names.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\mappings\wi-forecast-io.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\mappings\wi-owm.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\mappings\wi-wmo4680.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\mappings\wi-yahoo.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\weather-icons-classes.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\weather-icons-core.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\weather-icons-variables.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\weather-icons-wind.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\weather-icons-wind.min.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\weather-icons.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\less\weather-icons.min.less" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-classes\classes-beaufort.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-classes\classes-day.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-classes\classes-direction.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-classes\classes-misc.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-classes\classes-moon-aliases.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-classes\classes-moon.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-classes\classes-neutral.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-classes\classes-night.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-classes\classes-time.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-classes\classes-wind-aliases.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-classes\classes-wind-degrees.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-classes\classes-wind.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-variables\variables-beaufort.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-variables\variables-day.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-variables\variables-direction.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-variables\variables-misc.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-variables\variables-moon.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-variables\variables-neutral.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-variables\variables-night.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-variables\variables-time.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\icon-variables\variables-wind-names.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\mappings\wi-forecast-io.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\mappings\wi-owm.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\mappings\wi-wmo4680.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\mappings\wi-yahoo.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\weather-icons-classes.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\weather-icons-core.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\weather-icons-variables.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\weather-icons-wind.min.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\weather-icons-wind.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\weather-icons.min.scss" />
+    <Content Include="Content\dist\css\icons\weather-icons\sass\weather-icons.scss" />
+    <Content Include="Areas\Movie\Views\web.config" />
+    <Content Include="Areas\Movie\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Movie\Views\Functions\Movies.cshtml" />
+    <Content Include="Areas\Producer\Views\web.config" />
+    <Content Include="Areas\Producer\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Producer\Views\Functions\Producers.cshtml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout - Copy.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Actor\Models\" />
+    <Folder Include="Areas\Movie\Models\" />
+    <Folder Include="Areas\Movie\Views\Shared\" />
+    <Folder Include="Areas\Producer\Models\" />
+    <Folder Include="Areas\Producer\Views\Shared\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\Movie\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Deltax.Entity\Deltax.Entity.csproj">
+      <Project>{d4060a66-ea48-42e4-a702-43271cd095c4}</Project>
+      <Name>Deltax.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Deltax.Service\Deltax.Service.csproj">
+      <Project>{56D917D7-D1EF-479E-B4F5-3787CE9AC540}</Project>
+      <Name>Deltax.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49906</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49906/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4060A66-EA48-42E4-A702-43271CD095C4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Deltax.Entity</RootNamespace>
+    <AssemblyName>Deltax.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\Enums.cs" />
+    <Compile Include="Domain\Actor.cs" />
+    <Compile Include="Domain\CastingContext.cs" />
+    <Compile Include="Domain\Movie.cs" />
+    <Compile Include="Domain\Producer.cs" />
+    <Compile Include="Domain\User.cs" />
+    <Compile Include="Migrations\201808171031515_Add User and Actor Class.cs" />
+    <Compile Include="Migrations\201808171031515_Add User and Actor Class.Designer.cs">
+      <DependentUpon>201808171031515_Add User and Actor Class.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808171042277_Add Producer and change entity of User.cs" />
+    <Compile Include="Migrations\201808171042277_Add Producer and change entity of User.Designer.cs">
+      <DependentUpon>201808171042277_Add Producer and change entity of User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808171056236_Added Movie entity with relation to actor .cs" />
+    <Compile Include="Migrations\201808171056236_Added Movie entity with relation to actor .Designer.cs">
+      <DependentUpon>201808171056236_Added Movie entity with relation to actor .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808171152270_Add producer and Movie relation.cs" />
+    <Compile Include="Migrations\201808171152270_Add producer and Movie relation.Designer.cs">
+      <DependentUpon>201808171152270_Add producer and Movie relation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808221052097_byte array set to null in poster .cs" />
+    <Compile Include="Migrations\201808221052097_byte array set to null in poster .Designer.cs">
+      <DependentUpon>201808221052097_byte array set to null in poster .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201808171031515_Add User and Actor Class.resx">
+      <DependentUpon>201808171031515_Add User and Actor Class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808171042277_Add Producer and change entity of User.resx">
+      <DependentUpon>201808171042277_Add Producer and change entity of User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808171056236_Added Movie entity with relation to actor .resx">
+      <DependentUpon>201808171056236_Added Movie entity with relation to actor .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808171152270_Add producer and Movie relation.resx">
+      <DependentUpon>201808171152270_Add producer and Movie relation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808221052097_byte array set to null in poster .resx">
+      <DependentUpon>201808221052097_byte array set to null in poster .cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
