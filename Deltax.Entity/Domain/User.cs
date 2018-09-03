@@ -9,23 +9,19 @@ using System.Threading.Tasks;
 
 namespace Deltax.Entity.Domain
 {
-    public class User
+    [Table("User")]
+    public abstract class User
     {
         [Key]
+        [Column("Id")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        [MaxLength(250)]
-        [Required]
-        public string Name { get; set; }
-        [MaxLength(1000)]
-        [Required]
-        public string Bio { get; set; }
-        [Required]
+        public int UserId { get; set; }
+        [MaxLength(255)]
+        public string name { get; set; }
         public Gender Sex { get; set; }
-        [Required]
-        public DateTime Dob { get; set; }
-        public virtual ICollection<Actor> Actors { get; set; }
-        public virtual ICollection<Producer> Producers { get; set; }
+        public DateTime? Dob { get; set; }
+        [MaxLength(1000)]
+        public string Bio { get; set; }
 
     }
 }

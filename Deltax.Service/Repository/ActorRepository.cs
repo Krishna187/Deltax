@@ -11,10 +11,15 @@ namespace Deltax.Service.Repository
 {
     public class ActorRepository : GenericRepository<Actor>, IActorRepository
     {
-
+        CastingContext _db;
         public ActorRepository(CastingContext db) : base(db)
         {
+            _db = db;
+        }
 
+        public void AddActor(Actor a)
+        {
+            _db.Users.Add(a);
         }
     }
 }

@@ -8,19 +8,23 @@ using System.Threading.Tasks;
 
 namespace Deltax.Entity.Domain
 {
+    [Table("Movie")]
     public class Movie
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        [Required]
-        public int YearOfRelease { get; set; }
-        public string Plot { get; set; }
-        public byte?[] Poster { get; set; }
-        public int ProducerId { get; set; }
-        public virtual ICollection<Actor> Actors { get; set; }
-        [ForeignKey("ProducerId")]
-        public Producer Producer { get; set; }
+        [Column("Id")]
+        public int MovieId { get; set; }
 
+        [MaxLength(255)]
+        public string MovieName { get; set; }
+        public int YearOfRelease { get; set; }
+
+        public string Plot { get; set; }
+        //[Column("Poster")]
+        public byte?[] Poster { get; set; }
+
+        public virtual ICollection<Actor> Actors { get; set; }
+        [Required]
+        public virtual Producer Producer { get; set; }
     }
 }

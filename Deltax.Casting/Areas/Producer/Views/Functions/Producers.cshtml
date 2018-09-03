@@ -1,16 +1,111 @@
 ﻿
+@model  List<Deltax.Entity.Domain.Producer>
 @{
     ViewBag.Title = "Producers";
+    var sexLlist = Enum.GetValues(typeof(Deltax.Entity.Constants.Gender)).Cast<Deltax.Entity.Constants.Gender>();
+    var sex = sexLlist.Select(x => new SelectListItem
+    {
+        Text = x.ToString(),
+        Value = ((int)x) + ""
+    }).ToList();
+
+}
+@section Styles
+{
+    <link href="~/Content/jquery-ui.min.css" rel="stylesheet" />
+}
+@section Scripts
+{
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <script>
+
+        $(function () {
+            $('#Dob').datetimepicker();
+        });
+
+    </script>
 }
 
-<div class="container-fluid">
-    <ol>
-        @foreach (var x in Model)
-        {
-            <li>
-                @x.User.Name
-            </li>
-        }
-    </ol>
-</div>
 
+<div class="container-fluid">
+    <div class="col-2">
+        <div class="card">
+            <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add Producer</button>
+
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        @using (Html.BeginForm("AddProducer", "Functions", FormMethod.Post, new { Area = "Producer" }))
+                        {
+                            <div class="modal-header">
+                                <h4 class="modal-title">Add Producer</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                            </div>
+                            <div class="modal-body">
+
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true)
+
+
+                                <div class="form-group">
+                                    <label>Name </label>
+                                    @Html.TextBox("Name", "", new { @class = "form-control" })
+                                </div>
+                                <div class="form-group">
+                                    <label for="example-email"> Sex </label>
+                                    @Html.DropDownList("Sex", sex as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                                </div>
+                                <div class="form-group">
+                                    <label>Bio</label>
+                                    @Html.TextArea("Bio", new { @class = "form-control" })
+                                </div>
+                                <div class="form-group">
+                                    <label>Dob</label>
+                                    @Html.TextBox("Dob", "", new { @id = "Dob", @class = "form-control " })
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <input type="submit" class="btn btn-default" value="Submit" />
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Bio</th>
+                            <th scope="col">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var x in Model)
+                        {
+                            <tr>
+                                <td> @(Model.IndexOf(x) + 1) </td>
+                                <td> @x.name </td>
+                                <td> @x.Bio </td>
+                                <td> @(x.Dob.HasValue ? x.Dob.Value.ToString("MM/dd/yyyy") : "N/A" ) </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

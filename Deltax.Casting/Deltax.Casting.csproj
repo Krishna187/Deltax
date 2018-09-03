@@ -409,6 +409,8 @@
     <Content Include="Content\dist\js\pages\dashboards\dashboard1.js" />
     <Content Include="Content\dist\js\sidebarmenu.js" />
     <Content Include="Content\dist\js\waves.js" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery-ui.js" />
     <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Design\niceadmin-lite\assets\extra-libs\sparkline\sparkline.js" />
     <Content Include="Design\niceadmin-lite\assets\images\custom-select.png" />

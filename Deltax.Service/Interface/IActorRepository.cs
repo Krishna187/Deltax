@@ -9,6 +9,6 @@ namespace Deltax.Service.Interface
 {
     public interface IActorRepository : IGenericRepository<Actor>
     {
-
+        void AddActor(Actor a);
     }
 }

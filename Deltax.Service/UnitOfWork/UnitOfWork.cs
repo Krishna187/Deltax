@@ -13,43 +13,50 @@ namespace Deltax.Service.UnitOfWork
     {
         private CastingContext context = new CastingContext();
         // for actor 
-        private GenericRepository<Actor> actors;
-        public GenericRepository<Actor> Actors
+        private ActorRepository actors;
+        public ActorRepository Actors
         {
             get {
-                return new GenericRepository<Actor>(context);
+                return new ActorRepository(context);
             }
         }
         // for movies
 
-        private GenericRepository<Movie> movies;
-        public GenericRepository<Movie> Movies
+        //private GenericRepository<Movie> movies;
+        public MovieRepository Movies
         {
             get
             {
-                return new GenericRepository<Movie>(context);
+                return new MovieRepository(context);
             }
         }
         //  for producer
-        private GenericRepository<Producer> producer;
-        public GenericRepository<Producer> Producer
+        public ProducerRepository Producers
         {
             get
             {
-                return new GenericRepository<Producer>(context);
+                return new ProducerRepository(context);
             }
         }
+        //private GenericRepository<Producer> producer;
+        //public GenericRepository<Producer> Producer
+        //{
+        //    get
+        //    {
+        //        return new GenericRepository<Producer>(context);
+        //    }
+        //}
 
         //
 
-        private GenericRepository<User> users;
-        public GenericRepository<User> Users
-        {
-            get
-            {
-                return new GenericRepository<User>(context);
-            }
-        }
+        //private GenericRepository<User> users;
+        //public GenericRepository<User> Users
+        //{
+        //    get
+        //    {
+        //        return new GenericRepository<User>(context);
+        //    }
+        //}
 
         public void SaveChanges()
         {

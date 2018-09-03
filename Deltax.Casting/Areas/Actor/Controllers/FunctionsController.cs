@@ -22,15 +22,14 @@ namespace Deltax.Casting.Areas.Actor.Controllers
         {
             using (UnitOfWork db = new UnitOfWork())
             {
-                db.Actors.Add(new Entity.Domain.Actor {
-                    User = new Entity.Domain.User {
-                        Name = formData.Get("Name"),
-                        Bio = formData.Get("Bio"),
-                        Sex = (Entity.Constants.Gender)(int.Parse(formData.Get("Sex"))),
-                        Dob = DateTime.ParseExact(formData.Get("Dob"), "DD/MM/yyyy", )
-                    },
-                });
-
+                db.Actors.AddActor(new Entity.Domain.Actor {
+                    name= formData.Get("Name"),
+                    Sex = (Entity.Constants.Gender)int.Parse(formData.Get("Sex")),
+                    Bio = formData.Get("Bio"),
+                    Dob = DateTime.ParseExact(formData.Get("Dob"), "MM/dd/yyyy",
+                                  System.Globalization.CultureInfo.InvariantCulture)
+            });
+                db.SaveChanges();
             }
             return RedirectToAction("Actors", "Functions");
         }

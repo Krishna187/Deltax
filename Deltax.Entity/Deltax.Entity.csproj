@@ -54,25 +54,13 @@
     <Compile Include="Domain\Movie.cs" />
     <Compile Include="Domain\Producer.cs" />
     <Compile Include="Domain\User.cs" />
-    <Compile Include="Migrations\201808171031515_Add User and Actor Class.cs" />
-    <Compile Include="Migrations\201808171031515_Add User and Actor Class.Designer.cs">
-      <DependentUpon>201808171031515_Add User and Actor Class.cs</DependentUpon>
+    <Compile Include="Migrations\201808300750352_MovieTable Added with relation to user table.cs" />
+    <Compile Include="Migrations\201808300750352_MovieTable Added with relation to user table.Designer.cs">
+      <DependentUpon>201808300750352_MovieTable Added with relation to user table.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808171042277_Add Producer and change entity of User.cs" />
-    <Compile Include="Migrations\201808171042277_Add Producer and change entity of User.Designer.cs">
-      <DependentUpon>201808171042277_Add Producer and change entity of User.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808171056236_Added Movie entity with relation to actor .cs" />
-    <Compile Include="Migrations\201808171056236_Added Movie entity with relation to actor .Designer.cs">
-      <DependentUpon>201808171056236_Added Movie entity with relation to actor .cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808171152270_Add producer and Movie relation.cs" />
-    <Compile Include="Migrations\201808171152270_Add producer and Movie relation.Designer.cs">
-      <DependentUpon>201808171152270_Add producer and Movie relation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808221052097_byte array set to null in poster .cs" />
-    <Compile Include="Migrations\201808221052097_byte array set to null in poster .Designer.cs">
-      <DependentUpon>201808221052097_byte array set to null in poster .cs</DependentUpon>
+    <Compile Include="Migrations\201808300819326_MovieTable Added with relation to user table as producer.cs" />
+    <Compile Include="Migrations\201808300819326_MovieTable Added with relation to user table as producer.Designer.cs">
+      <DependentUpon>201808300819326_MovieTable Added with relation to user table as producer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,20 +70,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808171031515_Add User and Actor Class.resx">
-      <DependentUpon>201808171031515_Add User and Actor Class.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808300750352_MovieTable Added with relation to user table.resx">
+      <DependentUpon>201808300750352_MovieTable Added with relation to user table.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808171042277_Add Producer and change entity of User.resx">
-      <DependentUpon>201808171042277_Add Producer and change entity of User.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808171056236_Added Movie entity with relation to actor .resx">
-      <DependentUpon>201808171056236_Added Movie entity with relation to actor .cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808171152270_Add producer and Movie relation.resx">
-      <DependentUpon>201808171152270_Add producer and Movie relation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808221052097_byte array set to null in poster .resx">
-      <DependentUpon>201808221052097_byte array set to null in poster .cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808300819326_MovieTable Added with relation to user table as producer.resx">
+      <DependentUpon>201808300819326_MovieTable Added with relation to user table as producer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
